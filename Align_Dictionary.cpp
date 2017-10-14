@@ -21,7 +21,7 @@ public:
             if (!helper(words[i], words[i+1], indegs, edges)) {return res;}
         }
 
-        // Bread First Search (BFS)
+        // Breadth First Search (BFS)
         queue<char> q;
         for (auto c : indegs) {
             if (c.second == 0) {
