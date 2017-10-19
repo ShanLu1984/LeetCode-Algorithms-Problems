@@ -30,10 +30,11 @@ public:
             // if the string push into the stack is a “#”, call pushPound function.
             if (temp != "#") stk.push(temp);
             else {
-                if(!pushPound(stk)) return false;
+                if(!pushPound(stk)) return false; // if pushing "#" is unsuccessful, just return false;
             }
             start = pos + 1;
         }
+        // The process will end up with an single "#" in the stack (as the root); otherwise, it is not a valid preorder serialization.
         if (stk.size() == 1 && stk.top() == "#") return true;
         return false;
     }
