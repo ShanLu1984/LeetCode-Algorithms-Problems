@@ -19,14 +19,19 @@ public:
     };
     
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        priority_queue<ListNode*, vector<ListNode*>, compare> pq;
+        priority_queue<ListNode*, vector<ListNode*>, compare> pq; // define a priority_queue where the nodes with smaller values come first;
+        // push the head of all the lists into the heap;
         for (auto ln : lists) {
             if (ln != nullptr) {
                 pq.push(ln);
             }
         }
+        // a dummy node pointing to the head of the new linkedlist;
         ListNode* d = new ListNode(0);
+        // c is the pointer of the current node
         ListNode* c = d;
+        // As long as the heap is non-empty, pop the nodes at the top, and let the current node c point to it as the next node;
+        // Meanwhile, push the next pointer of the nodes that poped out (if the next pointer is not a nullptr);
         while (!pq.empty()) {
             ListNode* temp = pq.top();
             pq.pop();
@@ -36,6 +41,7 @@ public:
             }
             c = c->next;
         }
+        // we reach the end of the list, so we let current node c point to a nullptr; and return d->next;
         c->next = nullptr;
         return d->next;
     }
