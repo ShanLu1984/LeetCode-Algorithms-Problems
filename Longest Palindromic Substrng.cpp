@@ -28,7 +28,7 @@ public:
         return res;
     }
     
-    /** helper function used to return the longest palindrome with the starting position (l, r);
+    /** helper function used to return the longest palindrome with the starting position (l, r); */
     string helper(string &s, int l, int r) {
         int len = 0;
         while (l >= 0 && r < s.size()) {
