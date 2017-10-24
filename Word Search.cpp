@@ -1,4 +1,4 @@
-// Depth-first-search
+// Backtracking
 // space complexity: O(1)
 // time complexity: O(n * m * 4^L) in the worst case;
 //n: number of rows in board; m: number of columns in the board; L: the length of the word
